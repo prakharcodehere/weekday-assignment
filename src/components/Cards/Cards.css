@@ -1,0 +1,86 @@
+.job-card {
+    margin:3%;
+    width: 20vw;
+    border: 1px solid #410000;
+    border-radius: 8px;
+    padding: 24px;
+    
+}
+
+.company-logo{
+    width: 70px;
+    height: 70px;
+    border: 2px black solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.job-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid #00b038;
+}
+
+.company-details {
+    display: flex;
+    align-items: center;
+    
+    gap: 10px;
+}
+
+
+
+.company-info{
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+
+    
+}
+
+
+
+.company-info h3,
+.company-info p {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.company-details img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.job-description p {
+    margin-bottom: 10px;
+}
+
+.show-more-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-button button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.apply-button button:hover,
+.show-more-btn:hover {
+    opacity: 0.8;
+}

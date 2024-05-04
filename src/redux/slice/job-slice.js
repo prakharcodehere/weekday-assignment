@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const fetchJobs = createAsyncThunk(
-  'fetchJobs',
+  'jobs/fetchJobs',
   async ({ limit, offset }) => {
     try {
       const myHeaders = new Headers();
@@ -28,7 +28,7 @@ export const fetchJobs = createAsyncThunk(
         throw new Error("Failed to fetch data from API");
       }
       const data = await response.json();
-      return data.jobs;
+      return data.jdList; 
     } catch (error) {
   throw new Error(error)
     }
@@ -47,7 +47,7 @@ const jobSlice = createSlice({
       })
       .addCase(fetchJobs.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload;
+        state.data = action.payload; 
       })
       .addCase(fetchJobs.rejected, (state, action) => {
         state.loading = false;

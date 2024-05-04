@@ -5,8 +5,8 @@ import "./cardlist.css"
 const Carrdlist = ({jobData}) => {
   return (
     <div className='card-container'>
-    {jobData.map(job => (
-         <Cards key={job.jdUid} job={job} />
+    {jobData.map((job, id) => (
+         <Cards key={id+ 1} job={job} />
        ))}
        </div>
   )

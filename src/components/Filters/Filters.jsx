@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
@@ -6,7 +6,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 
-const Filters = () => {
+const Filters = ({onFilter}) => {
 
   const [filters, setFilters] = React.useState({
     minExperience: '',
@@ -17,10 +17,29 @@ const Filters = () => {
     role: ''
   });
 
+
+
   const handleChange = (event) => {
     const { name, value } = event.target;
+    
+ onFilter()
     setFilters({ ...filters, [name]: value });
   };
+
+
+
+  const handleSelectedfilter =() =>{
+
+
+  }
+
+
+
+  useEffect(()=>{
+
+  
+     },[filters])
+
 
   return (
     <Grid container spacing={2}>

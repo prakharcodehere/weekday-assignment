@@ -8,6 +8,8 @@ const initialState = {
   error: null,
 };
 
+
+
 export const fetchJobs = createAsyncThunk(
   'jobs/fetchJobs',
   async ({ limit, offset }) => {
@@ -28,7 +30,7 @@ export const fetchJobs = createAsyncThunk(
         throw new Error("Failed to fetch data from API");
       }
       const data = await response.json();
-      return data.jdList; 
+      return data.jdList;
     } catch (error) {
   throw new Error(error)
     }
@@ -38,6 +40,7 @@ export const fetchJobs = createAsyncThunk(
 const jobSlice = createSlice({
   name: 'jobs',
   initialState,
+  
  
   extraReducers: builder => {
     builder

@@ -2,7 +2,7 @@ import React from 'react'
 import Cards from '../Cards/Cards'
 import "./cardlist.css"
 
-const Carrdlist = ({jobData}) => {
+const Cardlist = ({jobData}) => {
   return (
     <div className='card-container'>
     {jobData.map((job, id) => (
@@ -12,4 +12,4 @@ const Carrdlist = ({jobData}) => {
   )
 }
 
-export default Carrdlist
+export default Cardlist

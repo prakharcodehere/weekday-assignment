@@ -22,23 +22,20 @@ const Filters = ({onFilter}) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     
- onFilter()
+
     setFilters({ ...filters, [name]: value });
   };
 
 
+  useEffect(() => {
+    onFilter(filters); 
+  }, [filters, onFilter]);
 
-  const handleSelectedfilter =() =>{
+ 
 
 
-  }
-
-
-
-  useEffect(()=>{
 
   
-     },[filters])
 
 
   return (

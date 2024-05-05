@@ -6,7 +6,7 @@ import "./Cards.css";
 
 const Cards = ({ job }) => {
 
-//show more-show less functionality**
+//show more-show less functional
 
   const [expanded, setExpanded] = useState(false);
 

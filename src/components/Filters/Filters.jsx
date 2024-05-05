@@ -67,7 +67,7 @@ const Filters = ({onFilter}) => {
 
   
 
-  
+
   const handleDeleteTechStack = (chipToDelete) => () => {
     setFilters((prevFilters) => ({
       ...prevFilters,
@@ -121,9 +121,10 @@ const Filters = ({onFilter}) => {
             value={filters.remote}
             onChange={handleChange}
           >
+           
+            <MenuItem value="in-office">On-site</MenuItem>
             <MenuItem value="remote">Remote</MenuItem>
-            <MenuItem value="hybrid">Hybrid</MenuItem>
-            <MenuItem value="in-office">In-office</MenuItem>
+           
           </Select>
         </FormControl>
       </Grid>

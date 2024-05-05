@@ -64,11 +64,17 @@
     color: rgb(76, 76, 76);
 }
 
-.description{
+.job-description-container {
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+  }
+
+.description{
+    margin-bottom: 10px;
+    text-align: left; 
    
-    align-items: flex-start;
+   
 }
 
 
@@ -76,7 +82,10 @@
     margin-top: 2px;
 }
 
-
+.salary-info p{
+color: rgb(0, 0, 0);
+font-weight: 300;
+}
 
 .company-details img {
     width: 50px;
@@ -86,23 +95,46 @@
 
 .job-description p {
     margin-bottom: 10px;
+   align-self: left;
+    
+}
+
+
+.job-role{
+color: rgb(110, 110, 110);
+font-weight: 600;
+line-height: 1.2rem;
+}
+
+.job-location{
+font-size: .75rem;
+margin-top: 9px;
 }
 
 .show-more-btn {
     
     color: #4000d4;
     border: none;
-    padding: 8px 16px;
+    
    font-weight: 500;
     cursor: pointer;
     
 }
+.exp-wrapper p {
+    font-size: 0.95rem;
+    text-align: start;
+ 
+}
 
-
+.exp-wrapper span{
+    font-size:1rem;
+   font-weight: 700;
+   color: rgb(103, 103, 103);
+}
 
 .apply-button button {
     width: 94%;
-    background-color: #28a745;
+    background-color: #54efc3;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -115,7 +147,10 @@
     opacity: 0.8;
 }
 
-
+.flash-icon{
+    color: rgb(251, 255, 42);
+    font-size: 1.4rem;
+}
 
 @media screen and (min-width: 768px) {
     .job-card {

@@ -20,9 +20,14 @@ const Cards = ({ job }) => {
           </div>
           <div className="company-info">
             <h3>{job.companyName}</h3>
-            <p>{job.jobRole}</p>
-            <p>{job.location}</p>
+            <p className="job-role">{job.jobRole}</p>
+            <p className="job-location">{job.location}</p>
           </div>
+          
+        </div>
+        <div className='salary-info'>
+        <p>Estimated salary:   {job.minJdSalary} - {job.maxJdSalary} {" "}L</p>
+     
         </div>
         <hr/>
         <div className="job-description-container">
@@ -35,13 +40,15 @@ const Cards = ({ job }) => {
             {expanded ? "Show Less" : "Show More"}
           </button>
         </div>
-
-        <div className='salary-info'>
-       {job.minJdSalary} - {job.maxJdSalary}
-        </div>
+<div className='exp-wrapper'>
+  <p>
+  <span>Mimimum Experience:</span> {" "}{job.minExp} years
+   </p>
+</div>
+       
       </div>
       <div className="apply-button">
-        <button> <IoFlash />Apply Now</button>
+        <button> <IoFlash className='flash-icon'/>Apply Now</button>
       </div>
     </div>
   );

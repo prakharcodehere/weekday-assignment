@@ -59,28 +59,24 @@ function App() {
 
   const handleFilter = (filters) => {
     const filteredJobs = allJobs.filter(job => {
-      let passFilter = true;
- 
-      Object.entries(filters).forEach(([key, value]) => {
-      
-        if (!value) return;
-     
-        if (key === 'minExperience' && job.minExp < value) {
-          passFilter = false;
-        } else if (key === 'minBasePay' && job.minJdSalary < value) {
-          passFilter = false;
-        } else if (key === 'companyName' && job.companyName.toLowerCase().indexOf(value.toLowerCase()) === -1) {
-          passFilter = false;
-        } else if (key === 'location' && job.location.toLowerCase().indexOf(value.toLowerCase()) === -1) {
-          passFilter = false;
-        } else if (key === 'role' && job.jobRole.toLowerCase().indexOf(value.toLowerCase()) === -1) {
-          passFilter = false;
+      return Object.entries(filters).every(([key, value]) => {
+        if (!value) return true; // If filter value is empty, pass the filter
+        switch (key) {
+          case 'minExperience':
+            return job.minExp >= value;
+          case 'minBasePay':
+            return job.minJdSalary >= value;
+          case 'companyName':
+            return job.companyName.toLowerCase().includes(value.toLowerCase());
+          case 'location':
+            return job.location.toLowerCase().includes(value.toLowerCase());
+          case 'role':
+            return job.jobRole.toLowerCase().includes(value.toLowerCase());
+          default:
+            return true;
         }
-        
       });
-      return passFilter;
     });
-    
     setFilteredData(filteredJobs);
   };
   
@@ -92,7 +88,16 @@ function App() {
       <h1>Hello</h1>
       <Filters onFilter={handleFilter}/>
       
-      <Cardlist jobData={filteredData.length > 0 ? filteredData : allJobs} />
+      {filteredData.length > 0 ? (
+        <Cardlist jobData={filteredData} />
+      )  : (
+        <>
+        
+        <p>No search results found.</p>
+        </>
+          
+        )
+       }
     </div>
   );
 }

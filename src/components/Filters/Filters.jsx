@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
-import FormControl from '@mui/material/FormControl';
+import Box from '@mui/material/Box';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import Chip from '@mui/material/Chip';
+
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
+
 
 const Filters = ({onFilter}) => {
 
@@ -14,7 +19,8 @@ const Filters = ({onFilter}) => {
     remote: '',
     companyName: '',
     location: '',
-    role: ''
+    role: '',
+    techStack: [], 
   });
 
 
@@ -31,12 +37,36 @@ const Filters = ({onFilter}) => {
     onFilter(filters); 
   }, [filters, onFilter]);
 
- 
+  const techStackOptions = [
+    'React', 
+    'Angular', 
+    'Vue', 
+    'Node.js', 
+    'Express.js', 
+    'Django', 
+    'Flask', 
+    'Spring', 
+    'Laravel', 
+    'Ruby on Rails',
+    'JavaScript',
+    'TypeScript',
+    'Django',
+    'C++',
+    'Python',
+    'Java'
+  ];
 
-
+  const handleTechStackChange = (event) => {
+    setFilters({ ...filters, techStack: event.target.value });
+  };
 
   
-
+  const handleDeleteTechStack = (chipToDelete) => () => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      techStack: prevFilters.techStack.filter((chip) => chip !== chipToDelete),
+    }));
+  };
 
   return (
     <Grid container spacing={3} style={{ padding: "20px"}}>
@@ -102,7 +132,7 @@ const Filters = ({onFilter}) => {
         />
       </Grid>
 
-      {/* New input fields for location and role */}
+     
       <Grid item xs={12} sm={6} md={4} lg={2}>
         <TextField
           fullWidth
@@ -124,7 +154,41 @@ const Filters = ({onFilter}) => {
           onChange={handleChange}
         />
       </Grid>
+
+
+      <Grid item xs={12} sm={6} md={4} lg={2}>
+        <FormControl fullWidth>
+          <InputLabel id="tech-stack-label">Tech Stack</InputLabel>
+          <Select
+            labelId="tech-stack-label"
+            id="tech-stack"
+            name="techStack"
+            multiple
+            value={filters.techStack}
+            onChange={handleTechStackChange}
+            renderValue={(selected) => (
+              <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+                {selected.map((value) => (
+                  <Chip
+                    key={value}
+                    label={value}
+                    onDelete={handleDeleteTechStack(value)}
+                    sx={{ m: 0.5 }}
+                  />
+                ))}
+              </Box>
+            )}
+          >
+            {techStackOptions.map(option => (
+              <MenuItem key={option} value={option}>{option}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </Grid>
+
+
     </Grid>
+    
   );
 };
 

@@ -33,9 +33,14 @@ const Filters = ({onFilter}) => {
   };
 
 
+  //filter-request-changing based on dependency
+
   useEffect(() => {
     onFilter(filters); 
   }, [filters, onFilter]);
+
+
+
 
   const techStackOptions = [
     'React', 
@@ -59,6 +64,8 @@ const Filters = ({onFilter}) => {
   const handleTechStackChange = (event) => {
     setFilters({ ...filters, techStack: event.target.value });
   };
+
+  
 
   
   const handleDeleteTechStack = (chipToDelete) => () => {

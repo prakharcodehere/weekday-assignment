@@ -5,6 +5,9 @@ import { IoFlash } from "react-icons/io5";
 import "./Cards.css";
 
 const Cards = ({ job }) => {
+
+//show more-show less functionality**
+
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -26,7 +29,7 @@ const Cards = ({ job }) => {
           
         </div>
         <div className='salary-info'>
-        <p>Estimated salary:   {job.minJdSalary} - {job.maxJdSalary} {" "}L</p>
+        <p>Estimated salary:   {job.minJdSalary  !== null ?  `${job.minJdSalary}L` : "not provided"} - {job.maxJdSalary  !== null ?  `${job.maxJdSalary}L` : "not provided"} </p>
      
         </div>
         <hr/>
@@ -48,7 +51,7 @@ const Cards = ({ job }) => {
        
       </div>
       <div className="apply-button">
-        <button> <IoFlash className='flash-icon'/>Apply Now</button>
+        <button > <IoFlash className='flash-icon'/><span>Apply now</span></button>
       </div>
     </div>
   );

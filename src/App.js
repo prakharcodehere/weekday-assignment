@@ -23,7 +23,7 @@ function App() {
   };
 
 
-//data👇
+//data-fetch**
 
   const jobData = useSelector(state => state.jobData.data);
   console.log("jobData:", jobData);
@@ -33,6 +33,10 @@ function App() {
   useEffect(() => {
     handleFetchJobs();
   }, [offset]); 
+
+
+//infinite-scroll** plus changing the offset and limit based on window heightY
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,11 +60,13 @@ function App() {
 
 
 
+//**filter-logic**
+
 
   const handleFilter = (filters) => {
     const filteredJobs = allJobs.filter(job => {
       return Object.entries(filters).every(([key, value]) => {
-        if (!value) return true; // If filter value is empty, pass the filter
+        if (!value) return true; 
         switch (key) {
           case 'minExperience':
             return job.minExp >= value;
@@ -92,7 +98,7 @@ function App() {
         <Cardlist jobData={filteredData} />
       )  : (
         <>
-        
+
         <p>No search results found.</p>
         </>
           

@@ -2,9 +2,9 @@
    margin: 5px;
     width: 22vw;
   margin-bottom: 6vh;
-    border-radius: 8px;
+    border-radius: 14px;
     padding: 24px;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 4px 8px 4px;
     
 }
 
@@ -132,14 +132,25 @@ margin-top: 9px;
    color: rgb(103, 103, 103);
 }
 
+
+.apply-button {
+    text-align: center
+    
+}
+
 .apply-button button {
-    width: 94%;
+    width: 98%;
     background-color: #54efc3;
-    color: #fff;
+    color: #000000;
+    font-weight: 700;
     border: none;
+    text-align: center;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .apply-button button:hover,
@@ -148,6 +159,7 @@ margin-top: 9px;
 }
 
 .flash-icon{
+    margin-right: 5px; 
     color: rgb(251, 255, 42);
     font-size: 1.4rem;
 }

@@ -1,20 +1,27 @@
 .job-card {
-    margin:3%;
-    width: 20vw;
-    border: 1px solid #410000;
+   margin: 5px;
+    width: 22vw;
+  margin-bottom: 6vh;
     border-radius: 8px;
     padding: 24px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     
 }
 
 .company-logo{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border: 2px black solid;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0; 
+   
+   
+}
+.building-logo{
+   font-size: 1.82rem;
 }
 
 .job-details {
@@ -23,19 +30,22 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    border: 1px solid #00b038;
+    
 }
 
 .company-details {
+    flex: 1;
+   
     display: flex;
-    align-items: center;
-    
-    gap: 10px;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 30px;
 }
 
 
 
 .company-info{
+    width: 70%;
     display: flex;
     flex-direction: column;
     padding: 2px;
@@ -43,14 +53,30 @@
     
 }
 
-
-
 .company-info h3,
 .company-info p {
     margin: 0;
     padding: 0;
     text-align: left;
 }
+
+.company-info h3{
+    color: rgb(76, 76, 76);
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+   
+    align-items: flex-start;
+}
+
+
+.description p{
+    margin-top: 2px;
+}
+
+
 
 .company-details img {
     width: 50px;
@@ -63,15 +89,19 @@
 }
 
 .show-more-btn {
-    background-color: #007bff;
-    color: #fff;
+    
+    color: #4000d4;
     border: none;
     padding: 8px 16px;
-    border-radius: 5px;
+   font-weight: 500;
     cursor: pointer;
+    
 }
 
+
+
 .apply-button button {
+    width: 94%;
     background-color: #28a745;
     color: #fff;
     border: none;
@@ -84,3 +114,30 @@
 .show-more-btn:hover {
     opacity: 0.8;
 }
+
+
+
+@media screen and (min-width: 768px) {
+    .job-card {
+      flex-direction: row;
+      
+    }
+  
+    .company-details {
+      flex: 1;
+    }
+  
+    .job-description {
+      flex: 1;
+    }
+  
+    .apply-button {
+      margin-top: 20px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .job-card{
+        width: 90vw;
+    }
+  }

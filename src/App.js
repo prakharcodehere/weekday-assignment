@@ -60,11 +60,11 @@ function App() {
   const handleFilter = (filters) => {
     const filteredJobs = allJobs.filter(job => {
       let passFilter = true;
-      // Loop through each filter criteria provided by the user
+ 
       Object.entries(filters).forEach(([key, value]) => {
-        // Skip empty filter values
+      
         if (!value) return;
-        // Check if the job passes the current filter criteria
+     
         if (key === 'minExperience' && job.minExp < value) {
           passFilter = false;
         } else if (key === 'minBasePay' && job.minJdSalary < value) {
@@ -76,11 +76,11 @@ function App() {
         } else if (key === 'role' && job.jobRole.toLowerCase().indexOf(value.toLowerCase()) === -1) {
           passFilter = false;
         }
-        // Add more filter criteria similarly
+        
       });
       return passFilter;
     });
-    // Update the state with filtered jobs
+    
     setFilteredData(filteredJobs);
   };
   

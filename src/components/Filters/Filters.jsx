@@ -39,7 +39,7 @@ const Filters = ({onFilter}) => {
 
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={3} style={{ padding: "20px"}}>
       <Grid item xs={12} sm={6} md={4} lg={2}>
         <FormControl fullWidth>
           <InputLabel id="min-experience-label">Min Experience</InputLabel>
